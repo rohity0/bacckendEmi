@@ -5,6 +5,7 @@ const user = require("./controller/userRegister");
 const cors  = require("cors");
 const profile = require("./controller/Profile");
 const emi = require("./controller/emi");
+const PORT = process.env.PORT || 8000
 
 const app  = express();
 app.use(cors());
@@ -15,7 +16,7 @@ app.use("/login", login);
 app.use("/profile", profile);
 app.use("/emi", emi);
 
-app.listen(8000, async()=>{
+app.listen(PORT, async()=>{
      await connect();
      console.log("done 800")
 })
